@@ -4,7 +4,7 @@ const searchPatternService = require('../../../src/app/services/search-pattern-s
 jest.mock('../../../src/app/services/search-pattern-service')
 
 describe('loadSearchPatternController', () => {
-    describe('loadGameController', () => {
+    describe('loadSearchPatternController', () => {
         it('should load loadSearchPatternService ', async () => {
             const Lista = [{}]
             const spyLoadSearchPatternService = jest

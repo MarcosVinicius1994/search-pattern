@@ -6,9 +6,9 @@ module.exports = {
 
     async loadSearchPatternController(httpRequest){
         try {
-           const resultGame = await loadSearchPatternService(httpRequest)
+           const resultSearch = await loadSearchPatternService(httpRequest)
            return {
-               body: resultGame,
+               body: resultSearch,
                statusCode: 200
            }
         } catch (error) {

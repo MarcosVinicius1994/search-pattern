@@ -11,7 +11,7 @@ require('express-async-errors')
 const express = require('express')
 const { errors } = require('celebrate')
 
-const swaggerUi = require('swagger-ui-express')
+// const swaggerUi = require('swagger-ui-express')
 const fs = require('fs')
 const yaml = require('js-yaml')
 const routes = require('./routes')
@@ -21,19 +21,19 @@ const { httpContext, setContext } = require('../middlewares/http-context')
 
 
 const app = express()
-const fileContexts = fs.readFileSync(
-    `${__dirname}/../../../src/shared/presentation/documentation.yaml`,
-    'utf8'
-)
+// const fileContexts = fs.readFileSync(
+//     `${__dirname}/../../../src/shared/presentation/documentation.yaml`,
+//     'utf8'
+// )
 
-const data = yaml.load(fileContexts)
+// const data = yaml.load(fileContexts)
 
 app.use(jsonParser)
 app.use(contentType)
 app.use(httpContext)
 app.use(setContext)
 app.use(routes)
-app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(data))
+// app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(data))
 app.use(errors())
 
 
