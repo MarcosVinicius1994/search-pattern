@@ -2,11 +2,10 @@ const fs = require('fs')
 const fg = require('fast-glob')
 const { redFilesLine } = require('./read-folder-util')
 const { printFile } = require('./print-info-util')
-const data = 'src/data/*.txt'
 
 
 module.exports = {
-    async readFile(word) {
+    async readFile(word, data) {
         try {
             const filesMatch = []
             const stream = fg.stream(data, { dot: true })

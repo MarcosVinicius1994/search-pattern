@@ -4,7 +4,10 @@ module.exports = {
             if (filesMatch.length > 0) {
                 console.log('Foram encontradas ' + filesMatch.length + ' ocorrências pelo termo ' + '"' + word + '"')
                 console.log('Os arquivos que possuem  ' + '"' + word + '"' + ' são:')
-                filesMatch.forEach(file => console.log(file))
+                for await (let file of filesMatch){
+                    // filesMatch.forEach(file => console.log(file))
+                    console.log(file)
+                }
             } else {
                 console.log('Não foram encontradas ocorrências pelo termo: ' + '"' + word + '"')
             }
