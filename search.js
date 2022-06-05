@@ -1,8 +1,12 @@
-const argumento = process.argv.slice(2)
+const argumento = process.argv
 const { loadSearchPatternService } = require('./src/app/services/search-pattern-batch-service')
-const [nome] = argumento
-if(nome === undefined){
+let entryString = ''
+for (let i = 2; i < argumento.length; i += 1) {
+    const element = argumento[i];
+    entryString = `${entryString} ${element}`
+}
+if(entryString === undefined){
     console.error("Favor informar o termo a ser procurado nos arquivos")
     process.exit(1)
 }
-loadSearchPatternService(`${nome}`)
+loadSearchPatternService(`${entryString}`)

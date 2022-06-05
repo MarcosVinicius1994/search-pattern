@@ -21,7 +21,7 @@ module.exports = {
             }
             await printFile(filesMatch, word)
         } catch (error) {
-            throw new Error('Error ao realizar a leitura do arquivo para o termo: ' + word)
+            throw new Error('Error ao realizar a leitura do arquivo para o termo: ' + word + error.message)
 
         }
 
