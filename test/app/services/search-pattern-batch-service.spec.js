@@ -13,14 +13,14 @@ describe('loadSearchPatternServiceBath', () => {
             const spyReadFile = jest
             .spyOn(file,'readFile')
             .mockReturnValueOnce(response)
-            const stu = await searchPatternServiceBath.loadSearchPatternServiceBath(word)
+            await searchPatternServiceBath.loadSearchPatternServiceBath(word)
             await file.readFile(word, data)
             expect(spyReadFile).toHaveBeenCalledWith(word, data)
         })
         it('should load loadSearchPatternServiceBath for called readFile ', async () => {
             const spyReadFile = jest.spyOn(file,'readFile')
             .mockImplementation(async () => await file.readFile(word, data))
-            const stu = await searchPatternServiceBath.loadSearchPatternServiceBath(word)
+            await searchPatternServiceBath.loadSearchPatternServiceBath(word)
             expect(spyReadFile).toHaveBeenCalledWith(word, data)
         })
     })
