@@ -20,6 +20,9 @@ localhost:3000/v1/search/pattern?word=walt disney
 Para a execução dos testes uniarios:
 
 1 - npm run test -> Executar todos os testes presentes na aplicação
-2 - npm run test -t "arquivo" -> Para a execução dos testes referentes a um arquivo especifico
+2 - npm run test -t "arquivo" -> Para a execução dos testes referentes a um arquivo especifico;
+
+--- Exemplo de execução:
+npm run test -t search-pattern-service
 
 
