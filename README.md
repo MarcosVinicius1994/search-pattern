@@ -12,7 +12,11 @@ Para realizar a execução da aplicação siga os seguintes passos:
 --- Exemplo de execução:
 localhost:3000/v1/search/pattern?word=walt disney
 
-3 - node search.js  walt disney para rodar a aplicação pelo CMD (Prompt de comandos);
+3 - node search.js "palavra"  walt disney para rodar a aplicação pelo CMD (Prompt de comandos);
+
+
+--- Exemplo de execução:
+node search.js walt disney
 
 
 
@@ -20,6 +24,7 @@ localhost:3000/v1/search/pattern?word=walt disney
 Para a execução dos testes uniarios:
 
 1 - npm run test -> Executar todos os testes presentes na aplicação
+
 2 - npm run test -t "arquivo" -> Para a execução dos testes referentes a um arquivo especifico;
 
 --- Exemplo de execução:
