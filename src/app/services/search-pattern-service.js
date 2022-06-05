@@ -5,7 +5,7 @@ module.exports = {
     async loadSearchPatternService(httpRequest) {
         try {
             const { word } = httpRequest.query
-            return readFile(word, data)
+            await readFile(word, data)
         } catch (error) {
             return {
                 statusCode: 500,

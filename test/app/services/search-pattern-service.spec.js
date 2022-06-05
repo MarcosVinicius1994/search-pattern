@@ -1,6 +1,5 @@
 const searchPatternService = require('../../../src/app/services/search-pattern-service')
-// const files = require('../../../src/app/utils/search-pattern-util/print-info-util')
-const { readFile } = require('../../../src/app/utils/search-pattern-util/read-files-util')
+const file = require('../../../src/app/utils/search-pattern-util/read-files-util')
 const { response } = require('../../mock/file-mock.json')
 const data = 'src/data/*.txt'
 const httpRequest = {
@@ -13,27 +12,21 @@ const httpRequest = {
 
 describe('loadSearchPatternService', () => {
     describe('loadSearchPatternService', () => {
-        // it('should load loadSearchPatternService ', async () => {
-        //     const spyReadFile = jest
-        //     .spyOn(searchPatternService, 'loadSearchPatternService')
-        //     .mockReturnValueOnce(response)
-        //     const { word } = httpRequest.query
-        //     await readFile(word, data)
-        //     const stu = await searchPatternService.loadSearchPatternService(httpRequest)
-        //     expect(spyReadFile).toHaveBeenCalledWith(httpRequest)
-        //     expect(stu).toEqual(response)
-        //     expect(searchPatternService.loadSearchPatternService).toHaveBeenCalled()
-        // })
-        it('should load loadSearchPatternService for called readFile ', async () => {
+        it('should load loadSearchPatternService ', async () => {
             const spyReadFile = jest
-            .spyOn(searchPatternService, 'loadSearchPatternService')
-            .mockImplementation(async () => await readFile())
+            .spyOn(file,'readFile')
+            .mockReturnValueOnce(response)
             const { word } = httpRequest.query
-            await readFile(word, data)
             const stu = await searchPatternService.loadSearchPatternService(httpRequest)
-            expect(spyReadFile).toHaveBeenCalledWith(httpRequest)
-            expect(stu).toEqual(response)
-            expect(searchPatternService.loadSearchPatternService).toHaveBeenCalled()
+            await file.readFile(word, data)
+            expect(spyReadFile).toHaveBeenCalledWith(word, data)
+        })
+        it('should load loadSearchPatternService for called readFile ', async () => {
+            const { word } = httpRequest.query
+            const spyReadFile = jest.spyOn(file,'readFile')
+            .mockImplementation(async () => await file.readFile(word, data))
+            const stu = await searchPatternService.loadSearchPatternService(httpRequest)
+            expect(spyReadFile).toHaveBeenCalledWith(word, data)
         })
     })
 })
