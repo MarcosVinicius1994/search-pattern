@@ -7,18 +7,12 @@ Repositorio destinado ao sistema de leitura de arquivos
 Para realizar a execução da aplicação siga os seguintes passos:
 
 1 - npm i -> Para a instalação de todos os pacotes necessarios para executar a aplicação;
-2 - npm run dev -> Para rodar a aplicação e executar a busca do padrão (palavra) nos arquivos;
 
---- Exemplo de execução:
-localhost:3000/v1/search/pattern?word=walt disney
+2 - Entrar na pasta raiz do projeto e executar o comando abaixo pelo CMD (Prompt de comandos):
+ node search.js "palavra" 
 
-3 - node search.js "palavra"  walt disney para rodar a aplicação pelo CMD (Prompt de comandos);
-
-
---- Exemplo de execução:
-node search.js walt disney
-
-
+---Exemplo
+ node search.js walt disney -> Execução para buscar nos arquivos a recorrencia para a palavra "walt disney"
 
 
 Para a execução dos testes uniarios:
